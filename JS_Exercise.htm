@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Exercises</title>
+  
+<!-- -----------我是分隔線 -------- -->
+<!-- 變數大小寫要注意 不同-->
+<!--<script>
+//變數名稱的大小寫有差嗎?
+function Button1_onclick() {
+  
+	var userName = txt1.value;
+	userName = "Hello! " + userName;
+	txt2.value = userName;
+  
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--var 宣告一塊記憶體 
+在function內與在外的變數是不相同的，在外的變數其他function都看得見
+第二個沒有加var txt1的內容會和txt2相同  -->
+<!--<script>
+//寫不寫 var 差在哪裏?
+var data = "Global Data";
+
+function Button1_onclick() {
+	  
+	var data = "local data";//裡面沒有宣告 會看外面的變數!! 
+	//沒有var宣告，等於是全域變數
+	txt1.value = window.data;//看外面的變數
+	txt2.value = data;//function的變數
+  
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!-- D項目的結果與其他不同-->
+<!--<script>
+//數值資料（一）
+function Button1_onclick() {
+	var nTest;
+	// nTest = new Number("122.5") + 1  // A
+	// nTest = new Number(122.5) + 1  // B
+	// nTest = 122.5 + 1  // C
+	// nTest = "122.5" + 1  // D
+
+	txt2.value = nTest;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!-- 兩個的結果不同-->
+<!--<script>
+//數值資料（二）
+function Button1_onclick() {
+	var x = 0.1;
+	var y = 0.2;
+	txt1.value = x + y;  // A 二進制
+	txt2.value = (x * 10000 + y * 10000) / 10000  // B
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//常用字串處理函式（一）
+function Button1_onclick() {
+	// var s = new String("0123456789中文字");
+	var s = "0123456789中文字"
+	txt1.value = s.length;  // A 字串的長度
+	txt2.value = s.substr(2, 5);  // B 起始位置，長度為5
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//練習
+function Button1_onclick() {
+	var x = 3;
+	var y = new String(x+10000);
+	txt1.value = y.substr(0,4);  // A 二進制
+	txt2.value = (x * 10000 + y * 10000) / 10000  // B
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//常用字串處理函式（二）
+function Button1_onclick() {
+	//var s = new String("0123456789中文字");//兩種寫法
+	var s = "0123456789中文字"
+	txt1.value = s.indexOf("567");  // A 第五個位置
+	txt2.value = s.indexOf("543");  // B
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//if 敘述（二）
+function Button1_onclick() {
+	var s = "0123456789中文字";
+	var position = s.indexOf("567");
+	if (position >= 0) {
+		txt1.value = "found";	
+	}
+	else {
+		txt1.value = "not found";
+	}
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//if 敘述（二）
+function Button1_onclick() {
+	// var test = true;   // A
+	// var test = 0;      // B
+	// var test = 3 > 0;  // C
+	// var test = "";     // D 空字串
+	 var test = null;   // E
+	
+	if (test) {
+		txt1.value = "Yes";	
+	}
+	else {
+		txt1.value = "No";
+	}	
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//迴圈敘述（一）
+function Button1_onclick() {
+	// A 12345
+	var line = "";
+	var i = 1;
+	while (i <= 5) {
+		line = line + i.toString();//toString是把數字變字串 +是串字串
+		i = i + 1;//i++
+	}
+	txt1.value = line;	
+	
+	// B 12345
+	var line = "";
+	for (var i = 1; i <= 5; i++) {  //只有在迴圈使用時可以在 for裡宣告
+		line = line + i.toString();
+	}
+	txt2.value = line;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//迴圈敘述（二）
+function Button1_onclick() {
+	// A 1235
+	var line = "";
+	var i = 1;
+	while (i <= 5) {
+		if (i == 4) {
+			i += 1;
+			continue;
+		}
+		line = line + i.toString();//+是串字串
+		i = i + 1;
+	}
+	txt1.value = line;	
+
+
+	// B 123
+	var line = "";
+	var i = 1;
+	while (i <= 5) {
+		if (i == 4) {
+			i += 1;
+			break;
+		}
+		line = line + i.toString();//+是串字串
+		i = i + 1;
+	}
+	txt2.value = line;	
+
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//函數(function)
+function Button1_onclick() {
+	// A
+	var line = "";
+	for (var i = 1; i <= 5; i++) {
+		line = line + "*";
+	}
+	txt1.value = line;
+	
+	// B
+	txt2.value = getLine(3, "*"); // 使用function
+}
+
+function getLine(count, what) {
+	var line = "";
+	for (var i = 1; i <= count; i++) {
+		line = line + what;
+	}
+	return line; //回傳
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//以 JavaScript 存取網頁內容
+function Button1_onclick() {
+	//debug.innerText = "line1<br>line2<br>";  // A 顯示內容
+	debug.innerHTML = "line1<br>line2<br>";  // B  會換行
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//陣列（一）
+function Button1_onclick() {
+	var seasons = new Array("春", "夏", "秋", "冬");  // A 兩種寫法
+	//var seasons = ["春", "夏", "秋", "冬"];  // B
+
+	seasons[3] = "暖冬"; 
+
+	var result = "";
+
+	for (var i = 0; i < seasons.length; i++) {
+		result += seasons[i] + "<br>";
+	}
+
+	debug.innerHTML = result;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//陣列（二
+function Button1_onclick() {
+	// var seasons = new Array("春", "夏", "秋", "冬");  // A 兩種寫法
+	var seasons = ["春", "夏", "秋", "冬"];  // B
+
+	seasons[9] = "怪怪天氣";      //中間沒有給值 為空的(沒有定義)
+
+	var result = "";
+
+	for (var i = 0; i < seasons.length; i++) {
+		result += seasons[i] + "<br>";
+	}
+
+	debug.innerHTML = result;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//	物件（一）
+function Button1_onclick() {
+	var obj = new Object();  // A
+	var obj = {};  // B
+	obj.firstName = "Wolfgang";    //為obj的變數
+	obj.lastName = "Chien";        //為obj的變數
+	//fcnction()裡面可以傳變數(數字、字串)、物件、function
+	obj.sayHello = function () { 
+		debug.innerHTML += "Hello! I'm " + this.lastName + "<br>";	
+	};
+	
+	debug.innerHTML = obj.firstName + "<br>";
+
+	obj.sayHello();
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//物件（二）
+function Button1_onclick() {
+	//物件(JASON的語法)
+	var obj = {
+		//冒號分隔屬性值 (屬性名稱:屬性值) 加 " 比較好
+		"firstName": "Wolfgang", 
+		"lastName": "Chien"
+	};
+	debug.innerHTML = obj.firstName + " " + obj.lastName;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//JASON（掃瞄記憶體內容，擷取出 JSON 格式的字串)
+function Button1_onclick() {
+	// A. 物件陣列，用中括號框住一組以 JSON 格式表現的物件
+	//陣列裡有多個物件(JASON的語法)
+	var objArray = [
+		{"firstName":"Derek", "lastName":"Jeter"}, 
+		{"firstName":"Jeremy", "lastName":"Lin"}, 
+		{"firstName":"Lionel", "lastName":"Messi"}
+	];
+	
+	//stringify(字串化)是轉成字串
+	debug.innerText = JSON.stringify(objArray); 
+	// B: [{"firstName":"Derek","lastName":"Jeter"},{"firstName":"Jeremy","lastName":"Lin"},{"firstName":"Lionel","lastName":"Messi"}]
+	//全部一次寫完的寫法而已 選A比較好閱讀
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//JSON （將JSON 格式的字串轉換成記憶體資料）
+function Button1_onclick() {
+	//單引號要加，拿到資料打成JASON格式轉為記憶體內容
+	var s = '[{"firstName":"Derek","lastName":"Jeter"},{"firstName":"Jeremy","lastName":"Lin"},{"firstName":"Lionel","lastName":"Messi"}]';
+	var objArray = JSON.parse(s); //parse轉為記憶體內容
+	debug.innerHTML = objArray[2].lastName + "<br>";
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//JavaScipt 的函式也是物件（一）
+//function can be class
+function Box() {
+	//自訂為 this.變數 只有此function使用
+	this.color = 'black';
+	this.paint = function (value) { 
+		this.color = value;
+	}
+}
+
+function Button1_onclick() {
+	var objBox = new Box();
+	objBox.paint("Blue");  //注意!!!
+	txt2.value = objBox.color;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//JavaScipt 的函式也是物件（二） -- NameSpace
+var Home = {
+	Box: function () { 
+		this.color = 'black';
+		this.paint = function (value) {
+			this.color = value;
+		}
+	}
+		
+}
+
+function Button1_onclick() {
+	var objBox = new Home.Box();
+	objBox.paint("RoyalBlue");
+	txt2.value = objBox.color;
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+//回呼函式 Callback function
+var Home = {
+	Box: function () {
+		this.color = 'black';
+		this.paint = function (value, cb) {
+			// delay 3 seconds.
+			//var now = new Date().getTime();
+		    //while (new Date().getTime() < now + 3000) { 
+		    //	/* do nothing */ 
+		    //} 
+			this.color = value;
+			cb();//呼叫function
+		}
+	}
+}
+
+function Button1_onclick() {
+	var objBox = new Home.Box();
+	objBox.paint("RoyalBlue", function () {
+		txt2.value = objBox.color;
+	});
+}
+
+</script>-->
+
+
+<!-- -----------我是分隔線 -------- -->
+<!--<script>
+
+function Button1_onclick() {
+	txt2.value = txt1.value;
+}
+
+</script> -->
+
+
+</head>
+<body>
+ 	txt1:
+	<input type="text" id="txt1" name="txt1" value="World" PlaceHolder="Keyin something" size="40">
+	<br><br>
+	<input type="button" id="Button1" name="Button1"   
+		value="2. 點我一下，執行 JavaScript" onclick="Button1_onclick()">
+	<br><br>
+	txt2:
+    <INPUT type="text" id="txt2"  name="txt2" value="Result" size="40">
+    <br>
+    <div id="debug"></div>
+</body>
+</html>
